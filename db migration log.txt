@@ -1,0 +1,28 @@
+1207,12:00 migration started
+1207,14:55 Mike updated on data almost being moved over
+1207,16:29 Mike sent out connection info for GISTPRD and JDBC URL for Oracle connection in SQL Developer
+1207,17:05 Asked Mike to disconnect all users of GISTPRD, tried recreating triggers and sequencies
+1207,17:42 Saw error "The Created Feature task could not be completed. Stream in progress" and "Invalid column data type", sent to Mike for idea
+1207,19:38 Mike noticed same error, decided to recreate geometric network
+1207,19:43 Justin pointed all feature services to GISTPRD except for those in test env
+1207,20:21 All feature services have been pointed to GISTPRD
+1207,22:59 Tested editing and no error showing up
+1208,00:20 Tried updating triggers and sequences, noticed database connection problem
+1208,*     Worked on testing ArcGIS Online and Collector Maps, FacilityID still not working
+1208,09:17 Notice edits not being saved in delta tables in GISTPRD, thus triggers cannot work correctly
+1208,09:27 When testing ProductionValveInspectionApp-Manager, recieved error "The layer, WaterDistribution, cannot be added to the map"
+1208,10:08 Got error when adding dataset from Steve's version: Error opening feature class. The feature class participates in a geometric network that could not be opened. DBMS table not found [ORA-04043:object RPUD.N_7_PROPS does not exist]
+1208,10:52 Recreated all versions in GISTPRD
+1208,11:26 Dale reported same error when adding dataset
+1208,11:49 Problem of adding dataset solved, tried to repoint data sources
+1208,12:35 Got error "Error setting the data source. Insufficient permissions[Insufficient permissions[RPUD.SewerMHFlushing]]"
+1208,12:50 Regranted privilege on all features
+1208,13:33 Worked on triggers for FacilityID, noticed JDBC URL not correct, tried TNS connection, noticed triggers not in GISTPRD and delta tables not found via base table depedencies
+1208,*     Identified delta tables via base table index, tested on water hydrant layer and it was working
+1208,14:31 Created triggers and sequences for all feature classes, FacilityID started working
+1208,15:00 Conference call with Mike and Justin, decided to sync GISTPRD and prod db every minutes
+1208,16:42 Joel noticed problem of line features being splitted when digitizing point features along the line
+1208,21:43 Rebuilt geometric network to match with complex edges
+
+
+
